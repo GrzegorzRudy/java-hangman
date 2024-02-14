@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Random;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
+
 
 
 public class Main {
@@ -13,11 +13,18 @@ public class Main {
         Scanner input = new Scanner(System.in);
         int graphic =0;
         int numberOfLetters =2;
+        int numberOfTry=6;
 
         do {
             System.out.println("Grafika 1 czy 2:");
             graphic = input.nextInt();
         }while(graphic!=1&graphic!=2);
+
+        /*System.out.println("Ile prób do zgadniecia? Optymalnie to 6. Wybierz z zakresu 1-12");
+        do {
+            numberOfTry = input.nextInt();
+        }while(numberOfTry<1||numberOfTry>12);
+         */
 
         System.out.println("Podaj długość słowa o dlugosci 2-21 liter:");
         do {
@@ -53,7 +60,6 @@ public class Main {
                     invisibleWord = fillTheInvisibleWord(WordToPlay,invisibleWord,charAttempt);
             }
             else attempt++ ; // zwieksz licznik prób
-
         }
     }
 
